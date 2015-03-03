@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TrelloAuth</title>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% flash.each do |k,v| %>
+  <%= [k,v] %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>

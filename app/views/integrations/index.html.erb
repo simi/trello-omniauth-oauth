@@ -1,0 +1,12 @@
+<h1>Integrations#index</h1>
+Connect <a href="/auth/trello">Trello</a>
+
+<% if @token %>
+  <div>Token: <%= @token %></div>
+  <div>Secret: <%= @secret %></div>
+  <%= form_tag notifications_path, method: :post do %>
+    <%= text_field_tag :name, '', placeholder: 'name' %>
+    <%= select_tag :list_id, options_for_select(@lists) %>
+    <%= submit_tag 'Send' %>
+  <% end %>
+<% end %>
